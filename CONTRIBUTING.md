@@ -1,14 +1,9 @@
-# Contributing Guidelines
+# Contributing
 
-Thank you for your interest in contributing to the Ethereum Transaction Failure Toolkit!
+This project is open-source and welcomes community feedback.
 
-## How to Contribute
+- Use GitHub Issues for questions, discussions, or suggestions
+- Pull requests are welcome
+- Keep changes focused and well-documented
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## Code of Conduct
-
-Please be respectful and constructive in all interactions.
+The goal is to keep the project simple, readable, and useful.
