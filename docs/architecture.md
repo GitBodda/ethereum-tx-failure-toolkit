@@ -1,7 +1,11 @@
-# Architecture
+# Architecture Notes (Draft)
 
-This document will describe the system architecture of the toolkit.
+The project is designed with a modular architecture.
 
-## Overview
+Key principles:
+- Ethereum-first design
+- Clear separation between data retrieval, analysis, and output
+- Reusable components
+- Minimal dependencies
 
-(To be documented)
+The initial implementation will focus on correctness and clarity before optimization.
