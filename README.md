@@ -1,4 +1,4 @@
-# Ethereum Transaction Failure & UX Monitoring Toolkit
+# Ethereum Transaction Failure Analysis & UX Toolkit
 
 ## Overview
 
@@ -83,6 +83,8 @@ Ethereum is the primary focus and design constraint.
 - Optional lightweight UI for visualization
 
 The architecture prioritizes clarity, maintainability, and reuse.
+
+The initial focus is correctness and clarity before performance optimization.
 
 ---
 
