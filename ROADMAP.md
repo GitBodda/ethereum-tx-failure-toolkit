@@ -20,3 +20,5 @@
 - Test against real Ethereum transaction data
 - Improve coverage and clarity
 - Prepare maintenance and contribution guidelines
+
+Timelines are intentionally flexible to allow research-driven iteration.
