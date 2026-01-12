@@ -1,4 +1,7 @@
 {
-  "example": "Sample output will be documented here",
-  "version": "1.0.0"
+  "txHash": "0x1234567890abcdef",
+  "status": "failed",
+  "category": "revert",
+  "reason": "Insufficient allowance",
+  "suggested_action": "Approve sufficient token allowance before retrying the transaction"
 }
