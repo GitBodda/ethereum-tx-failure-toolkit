@@ -1,7 +1,8 @@
-# UX Notes
+# UX Notes (Draft)
 
-This document contains user experience design considerations for the toolkit.
+The UX philosophy of this project is simple:
+- Prefer clarity over completeness
+- Avoid raw technical jargon where possible
+- Provide human-readable explanations alongside structured data
 
-## Guidelines
-
-(To be documented)
+The goal is to make failure states understandable without hiding important details.
