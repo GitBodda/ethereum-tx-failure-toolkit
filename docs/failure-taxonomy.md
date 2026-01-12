@@ -1,7 +1,12 @@
-# Failure Taxonomy
+# Failure Taxonomy (Draft)
 
-This document will contain the classification system for Ethereum transaction failures.
+This document outlines the planned classification of Ethereum transaction failures.
 
-## Categories
+The taxonomy will be refined during the research phase and is expected to cover:
+- Out of gas errors
+- Revert reasons
+- Invalid opcode execution
+- Contract logic errors
+- Common UX-related failure patterns
 
-(To be documented)
+This document is a draft and will be expanded as research progresses.
