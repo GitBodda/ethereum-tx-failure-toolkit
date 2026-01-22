@@ -1,7 +1,7 @@
 {
   "name": "ethereum-tx-failure-toolkit",
   "version": "1.0.0",
-  "description": "Minimal CLI to analyze Ethereum transaction failures.",
+  "description": "Toolkit for analyzing and classifying Ethereum transaction failures with structured JSON output.",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -12,6 +12,20 @@
     "dev": "tsx src/index.ts",
     "test": "vitest run",
     "test:watch": "vitest"
+  },
+  "keywords": [
+    "ethereum",
+    "transaction",
+    "failure",
+    "cli",
+    "debugging",
+    "json",
+    "toolkit"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GitBodda/ethereum-tx-failure-toolkit"
   },
   "devDependencies": {
     "typescript": "^5.0.0",

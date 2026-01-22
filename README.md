@@ -1,3 +1,6 @@
+# How this differs from block explorers
+
+Most block explorers display transaction failures as raw error messages or low-level logs. This toolkit provides structured JSON output designed for integration into wallets, dapps, and developer workflows. The output is concise, machine-readable, and focused on actionable debugging, making it ideal for programmatic use and automation. It enables deeper analysis and better UX for failed transactions, beyond what typical explorers offer.
 
 # Ethereum Transaction Failure Toolkit
 
@@ -17,11 +20,20 @@ npm install
 ```
 
 ## Quickstart
-```sh
-# Set your RPC URL (do not share real keys)
-export RPC_URL="https://your.ethereum.node"
+### Setting your RPC_URL
 
-# Analyze a transaction
+- **Codespaces:** Add a Codespaces secret named `RPC_URL`.
+- **Linux/macOS:**
+    ```sh
+    export RPC_URL="<your_rpc_url>"
+    ```
+- **Windows PowerShell:**
+    ```powershell
+    $env:RPC_URL="<your_rpc_url>"
+    ```
+
+Then run:
+```sh
 npm run dev -- analyze <txHash>
 ```
 

@@ -1,9 +1,29 @@
-# Contributing
+npm test
+npm run dev -- analyze 0x2e16ce6f3389b316f94cec33688c1a69bdc1347c012833af52eb9c8acc594a88 --rpc <your_rpc_url>npm test
+npm run dev -- analyze 0x2e16ce6f3389b316f94cec33688c1a69bdc1347c012833af52eb9c8acc594a88 --rpc <your_rpc_url># Contributing
 
-This project is open-source and welcomes community feedback.
+## Setup
+1. Clone the repository
+2. Run `npm install`
 
-- Use GitHub Issues for questions, discussions, or suggestions
-- Pull requests are welcome
-- Keep changes focused and well-documented
+## Running the CLI
+Run:
+```
+npm run dev -- analyze <txHash> --rpc <rpcUrl>
+```
+Example:
+```
+npm run dev -- analyze 0x2e16ce6f3389b316f94cec33688c1a69bdc1347c012833af52eb9c8acc594a88 --rpc https://rpc.sepolia.org
+```
 
-The goal is to keep the project simple, readable, and useful.
+## Running Tests
+Run:
+```
+npm test
+```
+
+## Contribution Guidelines
+- Keep code minimal, readable, and professional
+- Write concise documentation
+- Ensure all tests pass before submitting a pull request
+- Use English only
