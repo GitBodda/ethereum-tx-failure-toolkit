@@ -1,0 +1,17 @@
+[
+  {
+    "chain": "sepolia",
+    "txHash": "0x2e16ce6f3389b316f94cec33688c1a69bdc1347c012833af52eb9c8acc594a88",
+    "expectedCategory": "custom_error"
+  },
+  {
+    "chain": "sepolia",
+    "txHash": "0x6663dd8adb2b5722ee9bf296cf85c6e8aefaf4776bfb90ab64a7971cc4580848",
+    "expectedCategory": "failed_unknown_reason"
+  },
+  {
+    "chain": "sepolia",
+    "txHash": "0xca0e78f62a641e72a5604649d544eab0ae81967cb001fdbdf1d14b259c04ad3a",
+    "expectedCategory": "failed_unknown_reason"
+  }
+]

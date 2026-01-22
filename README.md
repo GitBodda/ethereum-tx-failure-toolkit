@@ -1,3 +1,52 @@
+
+# Ethereum Transaction Failure Toolkit
+
+## What this project does
+Analyzes Ethereum transaction failures and classifies them into clear categories with actionable explanations. Outputs structured JSON for easy integration and debugging.
+
+## Features
+- Detects and classifies transaction failures (revert, out of gas, RPC errors, etc.)
+- Decodes revert reasons and panic codes
+- Outputs clean, minimal JSON for automation or UX
+- CLI and Node.js integration
+- Includes real-world fixtures and a clear failure taxonomy
+
+## Installation
+```sh
+npm install
+```
+
+## Quickstart
+```sh
+# Set your RPC URL (do not share real keys)
+export RPC_URL="https://your.ethereum.node"
+
+# Analyze a transaction
+npm run dev -- analyze <txHash>
+```
+
+## Output format example
+```json
+{
+    "txHash": "0x...",
+    "status": "failed",
+    "category": "custom_error",
+    "message": "Custom error: ...",
+    "recommendation": "Check contract ABI for custom errors.",
+    "revertSelector": "0x..."
+}
+```
+
+## How it works
+- Fetches transaction and receipt via Ethereum JSON-RPC
+- Replays failed transactions to extract revert data
+- Decodes revert reasons, panic codes, and custom errors
+- Applies heuristics for out-of-gas and unknown failures
+
+## Fixtures & Taxonomy
+- [Failure taxonomy](docs/taxonomy.md)
+- [Test fixtures](examples/fixtures.json)
+
 # Ethereum Transaction Failure Analysis & UX Toolkit
 
 ## Overview
@@ -122,3 +171,58 @@ Clearer explanations of transaction failures help:
 
 Early-stage planning and research phase.  
 Repository initialized with public documentation.
+
+---
+
+## CLI Usage
+
+### Prerequisites
+- Node.js >= 18
+- Set your Ethereum RPC URL securely as an environment variable:
+  
+  export RPC_URL="https://your.ethereum.node"
+
+### Analyze a Transaction
+
+#### Development mode
+
+    npm run dev -- analyze <txHash>
+
+#### Build and run
+
+    npm run build
+    node dist/index.js analyze <txHash>
+
+#### CLI (after npm link)
+
+    txft analyze <txHash>
+
+#### Optional: Override RPC URL
+
+    npm run dev -- analyze <txHash> --rpc https://your.ethereum.node
+
+### Output
+The CLI prints a structured JSON result with status, category, and recommendations.
+
+
+---
+
+## Revert Reason Decoding
+
+When a transaction fails (status = "0x0"), the toolkit attempts to extract and decode the revert reason using the following logic:
+
+- **Revert reason (Error(string))**: If the revert data starts with `0x08c379a0`, the reason string is decoded and shown in the output as `revert_reason`.
+- **Panic(uint256)**: If the revert data starts with `0x4e487b71`, the panic code is decoded and mapped to a human-readable message (e.g., arithmetic overflow, division by zero). Output category is `panic`.
+- **Custom error selector**: For other selectors, the first 4 bytes are shown as `custom_error` and the selector is included for debugging.
+- **Out of gas**: If gas used is >= 98% of gas limit, the category is set to `out_of_gas`.
+- **Unknown**: If no revert data is found, the category is `failed_unknown_reason`.
+
+The output JSON includes extra fields:
+- `revertData`: Raw revert data if available
+- `revertSelector`: The 4-byte selector if available
+
+---
+
+### Notes
+- Never share your real RPC URLs or keys publicly.
+- Only mainnet-compatible RPC endpoints are supported.
